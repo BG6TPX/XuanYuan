@@ -11,7 +11,9 @@ pico_sdk_init()
 
 # rest of your project
 add_executable(blink
-    blink.c
+    ####### SRCS
+            ./../app/blink/blink.c
+    ####### head
 )
 
 # Add pico_stdlib library which aggregates commonly used features
