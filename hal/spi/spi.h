@@ -1,3 +1,6 @@
+#ifndef __spi_H__
+#define __SPI_H__
+
 #include "hardware/spi.h"
 
 #define SPI_PORT spi0
@@ -9,3 +12,6 @@
 
 extern void spi_init()
 extern void spi_transfer(uint8_t* tx_buffer, uint8_t* rx_buffer, size_t length)
+extern int  spi_main()
+
+#endif
