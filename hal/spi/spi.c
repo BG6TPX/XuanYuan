@@ -24,7 +24,7 @@ void spi_transfer(uint8_t* tx_buffer, uint8_t* rx_buffer, size_t length) {
     gpio_put(PIN_CS, 1);
 }
 
-int main() {
+int spi_main() {
     stdio_init_all();
     spi_init();
 
