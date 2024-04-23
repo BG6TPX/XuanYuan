@@ -1,10 +1,9 @@
-#include "pico/stdlib.h"
+#include "main.h"
 
 int main() {
-     while (true) {
-        gpio_put(LED_PIN, 1);
-        sleep_ms(500);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(500);
+    blink_init();
+    while (1)
+    {
+        led_blink_main();
     }
 }
