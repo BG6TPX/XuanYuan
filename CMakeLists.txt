@@ -15,18 +15,20 @@ add_executable(blink
         ## main
             ./main/main.c
         ## hal
-
+            ./hal/spi/spi.c
         ## app
             ./app/blink/blink.c
     ####### head
         ## main
             ./main/main.h
+        ## hal
+            ./hal/spi/spi.h
         ## app
             ./app/blink/blink.h
 )
 
 # Add pico_stdlib library which aggregates commonly used features
-target_link_libraries(blink pico_stdlib)
+target_link_libraries(blink pico_stdlib hardware_spi)
 
 # create map/bin/hex/uf2 file in addition to ELF.
 pico_add_extra_outputs(blink)

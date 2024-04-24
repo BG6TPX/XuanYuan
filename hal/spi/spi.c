@@ -1,6 +1,7 @@
 #include "spi.h"
 
-void spi_init() {
+void spi_init_m() 
+{
     // 设置SPI引脚
     spi_init(SPI_PORT, 1000 * 1000);  // 初始化SPI，设置速率为1MHz
     gpio_set_function(PIN_MISO, GPIO_FUNC_SPI);
@@ -13,7 +14,8 @@ void spi_init() {
     gpio_put(PIN_CS, 1);
 }
 
-void spi_transfer(uint8_t* tx_buffer, uint8_t* rx_buffer, size_t length) {
+void spi_transfer(uint8_t* tx_buffer, uint8_t* rx_buffer, size_t length) 
+{
     // 选中SPI设备
     gpio_put(PIN_CS, 0);
 
@@ -24,9 +26,10 @@ void spi_transfer(uint8_t* tx_buffer, uint8_t* rx_buffer, size_t length) {
     gpio_put(PIN_CS, 1);
 }
 
-int spi_main() {
+int spi_main() 
+{
     stdio_init_all();
-    spi_init();
+    spi_init_m();
 
     uint8_t tx_buffer[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     uint8_t rx_buffer[10];
